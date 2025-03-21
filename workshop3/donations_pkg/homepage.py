@@ -14,3 +14,11 @@ def donate(username):
     donation_string = f"{username} donated ${donation_amt}"
     print("Thank you for your donation!")
     return donation_string  # Return the donation string for further processing
+
+def show_donations(donations):
+    if not donations:
+        print("\nNo donations have been made yet.")
+    else:
+        print("\n--- All Donations ---")
+        for donation in donations:
+            print(donation)  # Print each donation string in the donations list
