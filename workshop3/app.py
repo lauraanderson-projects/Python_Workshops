@@ -26,7 +26,7 @@ while True:
     elif option == "2":
         username = input("\nEnter username: ")
         password = input("Enter password: ")
-        authorized_user = register(database, username)
+        authorized_user = register(database, username, password)
         if authorized_user != "":
             database[username] = password  # Add the new user to the database
         continue

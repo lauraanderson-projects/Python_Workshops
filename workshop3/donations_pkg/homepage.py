@@ -13,7 +13,7 @@ def donate(username):
     donation_amt = input(f"\n{username}, enter your donation amount: ")
     donation_string = f"{username} donated ${donation_amt}"
     print("Thank you for your donation!")
-    return donation_string  # Return the donation string for further processing
+    return donation_string # Return the donation string for further processing
 
 def show_donations(donations):
     if not donations:
