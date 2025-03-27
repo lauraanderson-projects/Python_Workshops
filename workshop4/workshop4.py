@@ -21,3 +21,11 @@ class User:
 
 """ Driver Code for Task 1 """
 #test_user = User("John Doe", 1234, "password123")
+
+""" Driver Code for Task 2 """
+test_user = User("John Doe", 1234, "password123")
+test_user.change_name("Jane Doe")
+test_user.change_pin(5678)
+test_user.change_password("newpassword456")
+
+print(f'Name: {test_user.name}, Pin: {test_user.pin}, Password: {test_user.password}')
