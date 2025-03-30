@@ -7,12 +7,24 @@ class User:
         #print(f'Name: {self.name}, Pin: {self.pin}, Password: {self.password}')
         
     def change_name(self, new_name):
-        self.name = new_name
+        if len(new_name) in range(2, 10) and self.name != new_name:
+            self.name = new_name
+        elif self.name == new_name:
+            print("Name already exists")
+        else:
+            print("Name must be between 2 and 10 characters")    
+        
   
     def change_pin(self, new_pin):
         self.pin = new_pin
   
     def change_password(self, new_password):
+        if new_password == self.password:
+            print("Password already exists")
+            return
+        elif len(new_password) < 5:
+            print("Password must be at least 5 characters")
+            return
         self.password = new_password
 
 class BankUser(User):
@@ -123,8 +135,12 @@ class BankUser(User):
 #test_user = User("John Doe", 1234, "password123")
 #print(f'Name: {test_user.name}, Pin: {test_user.pin}, Password: {test_user.password}')
 #test_user.change_name("Jane Doe")
-#test_user.change_pin(5678)
-#test_user.change_password("newpassword456")
+#test_user.change_name("J")  # bad name
+#test_user.change_name("John Doe")
+#test_user.change_pin(5678)  # good pin
+#test_user.change_pin(78)  # bad pin
+#test_user.change_password("newpassword456")  # good password
+#test_user.change_password("ne45")  # bad password
 
 #print(f'Name: {test_user.name}, Pin: {test_user.pin}, Password: {test_user.password}')
 
@@ -146,20 +162,20 @@ class BankUser(User):
 
 
 """Driver Code"""
-user1 = BankUser("Alice", 1234, "alicepass", 500)
-user2 = BankUser("Bob", 5678, "bobpass", 300)
+#user1 = BankUser("Alice", 1234, "alicepass", 500)
+#user2 = BankUser("Bob", 5678, "bobpass", 300)
 
-user1.show_balance()
-user2.show_balance()
+#user1.show_balance()
+#user2.show_balance()
 
 """Testing Transfers"""
 #user1.transfer_money(user2, 200)  # Alice sends $200 to Bob
 #user1.transfer_money(user2, "ddd")  # Transfer with invalid amount
+##user1.show_balance()
+##user2.show_balance()
+
+#"""Testing Requests"""
+#user2.request_money(user1, 200) #Bob request 100 from Alice
 #user1.show_balance()
 #user2.show_balance()
-
-"""Testing Requests"""
-user2.request_money(user1, 200) #Bob request 100 from Alice
-user1.show_balance()
-user2.show_balance()
 
