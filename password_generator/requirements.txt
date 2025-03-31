@@ -1,0 +1,23 @@
+Install Requried Software
+- Python
+- VS Code
+- Node.js
+
+Install VS Code Extensions
+- Python Extensions
+- Live Server
+- Prettier
+
+Create the folder structure
+password_generator/
+|---backend/
+|   |---app.py # Python backend (Flask)
+|---frontend/
+|   |---index.html # HTML UI
+|   |---script.js # Javascript logic
+|   |---style.css # CSS styles
+|---requirements.txt # Dependencies list
+|---ReadMe.md # Project documenation
+
+Install Flask
+pip install flask
