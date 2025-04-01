@@ -9,16 +9,58 @@
   <body>
     <div class="container">
       <h1>Password Generator</h1>
-      <label>Password Length:</label>
-      <input type="number" id="length" min="4" max="16" value="12" />
-      <div>
-        <label><input type="checkbox" id="uppercase" checked />Uppercase</label>
-        <label><input type="checkbox" id="lowercase" checked />Lowercase</label>
-        <label><input type="checkbox" id="numbers" checked />Numbers</label>
-        <label><input type="checkbox" id="symbols" checked />Symbols</label>
+
+      <input
+        type="text"
+        id="password"
+        readonly
+        class="password-display"
+        value="Min chars 16..."
+        onfocus="this.value = ''"
+      />
+      <div class="options">
+        <div class="option">
+          <div>
+            <label>Password Length:</label>
+          </div>
+          <div>
+            <input type="number" id="length" min="4" max="16" value="16" />
+          </div>
+        </div>
+        <div class="option">
+          <div>
+            <label>Uppercase</label>
+          </div>
+          <div>
+            <input type="checkbox" id="uppercase" checked />
+          </div>
+        </div>
+        <div class="option">
+          <div>
+            <label>Lowercase</label>
+          </div>
+          <div>
+            <input type="checkbox" id="lowercase" checked />
+          </div>
+        </div>
+        <div class="option">
+          <div>
+            <label>Numbers</label>
+          </div>
+          <div>
+            <input type="checkbox" id="numbers" checked />
+          </div>
+        </div>
+        <div class="option">
+          <div>
+            <label>Symbols</label>
+          </div>
+          <div>
+            <input type="checkbox" id="symbols" checked />
+          </div>
+        </div>
       </div>
       <button id="generate-btn">Generate Password</button>
-      <input type="text" id="password" readonly />
     </div>
     <script src="script.js"></script>
   </body>
