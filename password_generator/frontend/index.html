@@ -9,58 +9,70 @@
   <body>
     <div class="container">
       <h1>Password Generator</h1>
+      <div id="password-container">
+        <input
+          type="text"
+          id="password"
+          readonly
+          class="password-display"
+          value="Min chars 16..."
+          onfocus="this.value = ''"
+        />
+        <button id="copy-btn" onclick="copyToClipboard(event)">Copy</button>
+      </div>
 
-      <input
-        type="text"
-        id="password"
-        readonly
-        class="password-display"
-        value="Min chars 16..."
-        onfocus="this.value = ''"
-      />
       <div class="options">
         <div class="option">
-          <div>
-            <label>Password Length:</label>
+          <div class="label">
+            <label>Password Length</label>
           </div>
           <div>
-            <input type="number" id="length" min="4" max="16" value="16" />
+            <input
+              type="number"
+              class="password-length"
+              id="length"
+              min="4"
+              max="16"
+              value="16"
+            />
           </div>
         </div>
         <div class="option">
-          <div>
+          <div class="label">
             <label>Uppercase</label>
           </div>
-          <div>
+          <div class="input">
             <input type="checkbox" id="uppercase" checked />
           </div>
         </div>
         <div class="option">
-          <div>
+          <div class="label">
             <label>Lowercase</label>
           </div>
-          <div>
+          <div class="input">
             <input type="checkbox" id="lowercase" checked />
           </div>
         </div>
         <div class="option">
-          <div>
+          <div class="label">
             <label>Numbers</label>
           </div>
-          <div>
+          <div class="input">
             <input type="checkbox" id="numbers" checked />
           </div>
         </div>
         <div class="option">
-          <div>
+          <div class="label">
             <label>Symbols</label>
           </div>
-          <div>
+          <div class="input">
             <input type="checkbox" id="symbols" checked />
           </div>
         </div>
       </div>
-      <button id="generate-btn">Generate Password</button>
+      <div class="generate-password-container">
+        <button id="generate-btn">Generate Password</button>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>

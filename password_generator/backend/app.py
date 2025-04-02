@@ -7,7 +7,7 @@ app = Flask(__name__)
 CORS(app)
 
 class PasswordGenerator:
-    def __init__(self, length=12, use_upper=True, use_lower=True, use_numbers=True, use_symbols=True):
+    def __init__(self, length=16, use_upper=True, use_lower=True, use_numbers=True, use_symbols=True):
         self.length = length
         self.use_upper = use_upper
         self.use_lower = use_lower
@@ -32,8 +32,9 @@ class PasswordGenerator:
 @app.route('/generate-password', methods=['POST'])
 def get_password():
     data = request.json
+    #print(data)  # Print the received data
     password_generator = PasswordGenerator(
-		length=int(data.get('length', 12)),
+		length=int(data.get('length', 16)),
 		use_upper=data.get('use_upper', True),
 		use_lower=data.get('use_lower', True),
 		use_numbers=data.get('use_numbers', True),
